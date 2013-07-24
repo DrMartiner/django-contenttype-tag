@@ -14,7 +14,7 @@ setup(
     license='MIT',
     description='Easy application for get content type at template',
     long_description=README,
-    url='http://github.com/drmartiner/django-contenttype-tag/',
+    url='http://github.com/DrMartiner/django-contenttype-tag',
     author='DrMartiner',
     author_email='DrMartiner@GMail.Com',
     classifiers=[
