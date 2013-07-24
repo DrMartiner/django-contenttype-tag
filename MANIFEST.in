@@ -2,5 +2,3 @@ include LICENSE
 include README.rst
 recursive-include generic_ct_tag *
 exclude *.pyc
-exclude settings_local.py
-exclude db.sqlite3
