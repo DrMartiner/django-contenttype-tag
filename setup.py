@@ -3,12 +3,14 @@
 import os
 from setuptools import setup
 
+
 README = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
-os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
+
+__version__ = '1.0.1'
 
 setup(
     name='django-contenttype-tag',
-    version='1.0',
+    version=__version__,
     packages=['generic_ct_tag'],
     include_package_data=True,
     license='MIT',
