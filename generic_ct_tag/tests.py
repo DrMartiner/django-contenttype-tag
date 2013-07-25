@@ -13,19 +13,20 @@ class TemplateTagsTestCase(unittest.TestCase):
         )
         self.user.save()
 
-        self.template = '{% load generic_ct %}{% content_type obj %}'
+        self.template = '{% load generic_ct %}'
 
     def tearDown(self):
         self.user.delete()
 
     def test_render_type(self):
-        template = Template(self.template)
+        template = Template(self.template + '{% content_type obj %}')
         context = Context({'obj': self.user})
         html = template.render(context)
         self.assertIn('auth.user', html, 'Content type was not render')
 
     def test_render_as_name(self):
-        template = Template(self.template + '{{ ct.app_label }}.{{ ct.model }}')
+        template = Template(
+            self.template + '{% content_type obj as ct %}{{ ct.app_label }}.{{ ct.model }}')
         context = Context({'obj': self.user})
         html = template.render(context)
         self.assertIn('auth.user', html, 'Content type was not render')
